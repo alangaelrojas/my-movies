@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">My Movies by Alan</string>
+    <string name="movies">Movies</string>
+    <string name="search">Search</string>
+    <string name="discover">Discover</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="popular">Popular</string>
+    <string name="top_rated">Top rated</string>
 </resources>

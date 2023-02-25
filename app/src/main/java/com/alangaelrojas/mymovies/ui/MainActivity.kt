@@ -1,14 +1,14 @@
-package com.alangaelrojas.mymovies
+package com.alangaelrojas.mymovies.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.fragment.app.Fragment
+import com.alangaelrojas.mymovies.R
 
 class MainActivity : AppCompatActivity() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,8 +39,11 @@ class MainActivity : AppCompatActivity() {
              * de edtCorreo y mostrarlo en un Toast
              */
 
-            val correo = edtCorreo.text.toString()
-            Toast.makeText(this, correo, Toast.LENGTH_LONG).show()
+            // Intent explicito (a -> b)
+            val intent = Intent(this@MainActivity, DashboardActivity::class.java)
+            intent.putExtra("greeting", "holaaaaaaaaaaaaaaaaaa")
+            startActivity(intent)
+            this.finish()
         }
 
     }
