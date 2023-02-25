@@ -6,7 +6,11 @@ import android.view.MenuItem
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.alangaelrojas.mymovies.R
+import com.alangaelrojas.mymovies.ui.discover.DiscoverMoviesFragment
+import com.alangaelrojas.mymovies.ui.movies.MoviesFragment
+import com.alangaelrojas.mymovies.ui.search.SearchMoviesFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 
@@ -59,8 +63,6 @@ class DashboardActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedL
 
         bottomNavigationView.setOnItemSelectedListener(this)
 
-
-
     }
 
     private fun withLazyInit() {
@@ -93,16 +95,31 @@ class DashboardActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedL
 
         when(item.itemId){
             R.id.navMovies -> {
-                Toast.makeText(this, "Movies", Toast.LENGTH_SHORT).show()
+                changeFragment(MoviesFragment.newInstance())
             }
             R.id.navSearch -> {
-                Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show()
+                changeFragment(SearchMoviesFragment())
             }
             R.id.navDiscover -> {
-                Toast.makeText(this, "Movies", Toast.LENGTH_SHORT).show()
+                changeFragment(DiscoverMoviesFragment())
             }
         }
 
         return true
+    }
+
+    private fun changeFragment(fragment: Fragment){
+        /*
+        Este codigo hace exactamente lo mismo que el de debajo
+        val manager = supportFragmentManager
+        val transaction = manager.beginTransaction()
+        transaction.replace(R.id.container, fragment)
+        transaction.commit()
+         */
+
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.container, fragment)
+            commit()
+        }
     }
 }
