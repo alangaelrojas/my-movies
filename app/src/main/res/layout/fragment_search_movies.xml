@@ -2,16 +2,94 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilSearch"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hola desde Search Movies"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="8dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieSearch"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="@string/buscar_una_pelicula" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TableLayout
+        android:id="@+id/tblGenres"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tilSearch"
+        android:shrinkColumns="*"
+        android:stretchColumns="*"
+        android:visibility="visible"
+        tools:visibility="gone">
+
+        <TableRow
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:layout_height="60dp"
+                android:id="@+id/btnGenreAction"
+                android:text="Action" />
+
+            <Button
+                android:layout_height="60dp"
+                android:id="@+id/btnGenreAdventure"
+                android:text="Adventure" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:layout_height="60dp"
+                android:id="@+id/btnGenreAnimation"
+                android:text="Animation" />
+
+            <Button
+                android:layout_height="60dp"
+                android:id="@+id/btnGenreComedy"
+                android:text="Comedy" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:layout_height="60dp"
+                android:id="@+id/btnGenreCrime"
+                android:text="Crime" />
+
+            <Button
+                android:layout_height="60dp"
+                android:id="@+id/btnGenreDocumentary"
+                android:text="Documentary" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilSearch"
+        tools:listitem="@layout/item_movie"
+        android:visibility="gone"
+        tools:visibility="visible"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
