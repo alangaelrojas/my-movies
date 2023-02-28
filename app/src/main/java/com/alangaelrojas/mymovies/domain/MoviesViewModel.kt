@@ -6,14 +6,15 @@ import com.alangaelrojas.mymovies.model.ItemMovie
 
 class MoviesViewModel : ViewModel() {
 
+
+    lateinit var repository: MoviesRepository
+
+    // LiveData que hara un puente entre la UI y el ViewModel
     val movieList by lazy { MutableLiveData<List<ItemMovie>>() }
 
     fun getMovies(){
-        movieList.postValue(listOf<ItemMovie>(
-            ItemMovie("Shark", "Pelicula de Steven Spielberg", ""),
-            ItemMovie("Shinning", "Pelicula basada en el libro de Stephen King", ""),
-            ItemMovie("Titanic", "Titanic", "")
-        ))
+        val movies = repository.getMovies()
+
     }
 
 }

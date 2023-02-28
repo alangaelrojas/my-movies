@@ -41,6 +41,7 @@ class MoviesFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
+        // Llamar al listado de peliculas
         viewModel.getMovies()
     }
 
