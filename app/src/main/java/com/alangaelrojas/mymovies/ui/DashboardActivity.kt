@@ -62,6 +62,7 @@ class DashboardActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedL
         }
 
         bottomNavigationView.setOnItemSelectedListener(this)
+        bottomNavigationView.selectedItemId = R.id.navMovies
 
     }
 
