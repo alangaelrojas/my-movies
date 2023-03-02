@@ -12,13 +12,7 @@ import com.alangaelrojas.mymovies.domain.MoviesViewModel
 
 class MoviesFragment : Fragment() {
 
-
     private lateinit var viewModel: MoviesViewModel
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,8 +27,10 @@ class MoviesFragment : Fragment() {
 
         viewModel = ViewModelProvider(this)[MoviesViewModel::class.java]
 
+        // Observe, observa los cambios en el viewmodel a las propiedades, en este caso movieList
         viewModel.movieList.observe(viewLifecycleOwner){ movies ->
             Toast.makeText(context, movies.toString(), Toast.LENGTH_SHORT).show()
+            // aqui agregaremos la logica cuando recibamos la info de la fuente de datos(database o API)
         }
     }
 
