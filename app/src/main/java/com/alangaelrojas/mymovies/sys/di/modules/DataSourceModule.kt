@@ -1,6 +1,7 @@
 package com.alangaelrojas.mymovies.sys.di.modules
 
 import com.alangaelrojas.mymovies.datasource.api.RetrofitService
+import com.alangaelrojas.mymovies.datasource.database.MoviesDatabase
 import com.alangaelrojas.mymovies.sys.Constants
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

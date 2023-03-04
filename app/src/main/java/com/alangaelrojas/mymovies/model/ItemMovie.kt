@@ -11,5 +11,6 @@ data class ItemMovie(
     val description: String,
     val movieCover: String,
     val popularity: Double,
-    val releaseDate: String
+    val releaseDate: String,
+    val voteAverage: String
 )
