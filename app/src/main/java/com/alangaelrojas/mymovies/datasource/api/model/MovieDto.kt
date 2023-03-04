@@ -8,5 +8,6 @@ data class MovieDto(
     @SerializedName("overview") val description: String,
     @SerializedName("poster_path") val movieCover: String,
     @SerializedName("popularity") val popularity: Double,
-    @SerializedName("release_date") val releaseDate: String
+    @SerializedName("release_date") val releaseDate: String,
+    @SerializedName("vote_average") val voteAverage: String
 )
