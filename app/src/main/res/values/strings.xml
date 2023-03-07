@@ -8,4 +8,16 @@
     <string name="popular">Popular</string>
     <string name="top_rated">Top rated</string>
     <string name="buscar_una_pelicula">Buscar una pelicula…</string>
+    <string name="choose_your_country">Selecciona tu pais</string>
+    <string name="choose_your_language">Selecciona tu idioma</string>
+
+    <string-array name="countries_list">
+        <item>MX</item>
+        <item>US</item>
+    </string-array>
+
+    <string-array name="languages_list">
+        <item>es-MX</item>
+        <item>en-US</item>
+    </string-array>
 </resources>

@@ -1,5 +1,6 @@
 package com.alangaelrojas.mymovies.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -11,6 +12,7 @@ import com.alangaelrojas.mymovies.R
 import com.alangaelrojas.mymovies.ui.discover.DiscoverMoviesFragment
 import com.alangaelrojas.mymovies.ui.movies.MoviesFragment
 import com.alangaelrojas.mymovies.ui.search.SearchMoviesFragment
+import com.alangaelrojas.mymovies.ui.settings.SettingsActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 
@@ -58,7 +60,7 @@ class DashboardActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedL
 
         imgUser.setOnClickListener {
             //  Aqui vamos a escuchar cuando se de click en imgUser
-
+            startActivity(Intent(this, SettingsActivity::class.java))
         }
 
         bottomNavigationView.setOnItemSelectedListener(this)
