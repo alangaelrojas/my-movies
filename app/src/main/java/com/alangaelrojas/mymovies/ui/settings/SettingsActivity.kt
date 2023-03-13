@@ -55,7 +55,8 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun saveIntoSharedPreferences(key: String, value: String) {
-        val sharedPreferences = getSharedPreferences(Constants.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
+        val sharedPreferences =
+            getSharedPreferences(Constants.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
         editor.putString(key, value)
         editor.apply()

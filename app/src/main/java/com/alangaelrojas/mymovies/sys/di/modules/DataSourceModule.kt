@@ -43,10 +43,17 @@ class DataSourceModule {
     }
 
     @Provides
-    fun providesMoviesDao(database: MoviesDatabase): MoviesDao{
+    fun providesMoviesDao(database: MoviesDatabase): MoviesDao {
         return database.moviesDao()
     }
 
+    /**
+     * Las SharedPreferences son un mecanismo de almacenamiento de datos clave-valor en Android.
+     * Son una forma sencilla de almacenar datos en la aplicación, como configuraciones de usuario,
+     * preferencias, valores booleanos, cadenas, números, etc.
+     *
+     * @see [https://developer.android.com/reference/android/content/SharedPreferences]
+     * **/
     @Provides
     fun providesSharedPreferences(context: Context): SharedPreferences {
         return context.getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)

@@ -70,7 +70,8 @@ class DashboardActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedL
 
     private fun withLazyInit() {
         //Peresoza
-        if (cc){ }
+        if (cc) {
+        }
         val number: Int = ca
         val greeting: String = cb
     }
@@ -89,14 +90,14 @@ class DashboardActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedL
     }
 
     private fun withValues() {
-        if (a != null){
+        if (a != null) {
             val sum = a + 10
         }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
 
-        when(item.itemId){
+        when (item.itemId) {
             R.id.navMovies -> {
                 changeFragment(MoviesFragment.newInstance())
             }
@@ -111,7 +112,7 @@ class DashboardActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedL
         return true
     }
 
-    private fun changeFragment(fragment: Fragment){
+    private fun changeFragment(fragment: Fragment) {
         /*
         Este codigo hace exactamente lo mismo que el de debajo
         val manager = supportFragmentManager
