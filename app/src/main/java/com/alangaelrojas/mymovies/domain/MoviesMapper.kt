@@ -6,7 +6,7 @@ import com.alangaelrojas.mymovies.model.ItemMovie
 
 class MoviesMapper {
 
-    fun mapMoviesDtoToMoviesEntity(moviesDto: List<MovieDto>): List<MovieEntity>{
+    fun mapMoviesDtoToMoviesEntity(moviesDto: List<MovieDto>): List<MovieEntity> {
         return moviesDto.map {
             MovieEntity(
                 it.movieId,
@@ -20,7 +20,7 @@ class MoviesMapper {
         }
     }
 
-    fun mapMoviesEntityToItemMovies(moviesEntity: List<MovieEntity>): List<ItemMovie>{
+    fun mapMoviesEntityToItemMovies(moviesEntity: List<MovieEntity>): List<ItemMovie> {
         return moviesEntity.map {
             ItemMovie(
                 it.movieId,
@@ -34,7 +34,7 @@ class MoviesMapper {
         }
     }
 
-    fun mapMoviesDtoToItemMovies(moviesDto: List<MovieDto>): List<ItemMovie>{
+    fun mapMoviesDtoToItemMovies(moviesDto: List<MovieDto>): List<ItemMovie> {
         return moviesDto.map {
             ItemMovie(
                 it.movieId,

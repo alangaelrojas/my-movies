@@ -19,7 +19,7 @@ class MoviesViewModel : ViewModel() {
     val movieList by lazy { MutableLiveData<List<ItemMovie>>() }
     val errorMovies by lazy { MutableLiveData<Unit>() }
 
-    fun getMovies(){
+    fun getMovies() {
 
         viewModelScope.launch {
 

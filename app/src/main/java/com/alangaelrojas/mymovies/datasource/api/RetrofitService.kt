@@ -9,7 +9,9 @@ import retrofit2.http.Query
 
 /**
  * Interfaz usando el patron facade para llamar a los endpoint de la API
- *
+ * Podemos ver que son todas las llamadas a nuestro servidor o API y estas
+ * pueden contener todas las anotaciones de las operaciones
+ * HTTP
  * **/
 interface RetrofitService {
 

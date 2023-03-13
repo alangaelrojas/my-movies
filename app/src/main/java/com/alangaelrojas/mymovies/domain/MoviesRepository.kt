@@ -30,12 +30,13 @@ class MoviesRepository {
 
     init {
         val context = MyApplication.contextComponent.context()
-        DaggerDataSourceComponent.builder().contextModule(ContextModule(context)).dataSourceModule(DataSourceModule()).build().inject(this)
+        DaggerDataSourceComponent.builder().contextModule(ContextModule(context))
+            .dataSourceModule(DataSourceModule()).build().inject(this)
     }
 
     suspend fun getMovies(): Result<List<ItemMovie>> {
 
-        if(connectedToInternet()){
+        if (connectedToInternet()) {
             // Obtiene movies del servidor
             val remoteMovies = getRemoteMovies() ?: return Result(null, NotFoundException())
 
@@ -54,20 +55,21 @@ class MoviesRepository {
         return Result(movies, null)
     }
 
-    private suspend fun saveMovies(movieEntities: List<MovieEntity>){
+    private suspend fun saveMovies(movieEntities: List<MovieEntity>) {
         moviesDao.insertMovies(movieEntities)
     }
 
-    private suspend fun getLocalMovies(): List<MovieEntity>{
+    private suspend fun getLocalMovies(): List<MovieEntity> {
         return moviesDao.getMovies()
     }
 
-    private suspend fun getRemoteMovies(): List<MovieDto>?{
-        val moviesResponse = retrofitService.getPopularMovies("a803ee46f1492d691215b7b20a660bc4", language, 1)
+    private suspend fun getRemoteMovies(): List<MovieDto>? {
+        val moviesResponse =
+            retrofitService.getPopularMovies("YOUR API KEY", language, 1)
 
         val httpCode = moviesResponse.code()
 
-        if (httpCode in  300..599){
+        if (httpCode in 300..599) {
             return null
         }
 
@@ -77,7 +79,7 @@ class MoviesRepository {
         return body.results
     }
 
-    private val language: String = preferences.getString("language", "")?: ""
+    private val language: String = preferences.getString("language", "") ?: ""
 
     private fun connectedToInternet(): Boolean = true
 
